@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link 
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/shows/show-index.css' %}"
+/>
+{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+  <h1>Show List</h1>
+</section>
+
+<section class="card-container">
+  {% for show in shows %}
+    <div class="card">
+      <div class="card-content">
+        <h2 class="card-title">{{ show.name }}</h2>
+        <p>{{ show.genre }}</p>
+        <p>{{ show.seasons }}</p>
+        <p>{{ show.notes }}</p>
+        <p>{{ show.rating }}</p>
+      </div>
+    </div>
+  {% endfor %}
+</section>
+
+{% endblock %}
