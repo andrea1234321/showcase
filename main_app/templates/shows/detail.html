@@ -21,6 +21,8 @@
     <p>{{ show.notes }}</p>
     <p>{{ show.rating }}</p>
   </div>
+  <div class="show-actions">
+    <a href="{% url 'show-update' show.id %}" class="btn warn">Edit</a>
 </section>
 
 {% endblock %}

@@ -8,7 +8,11 @@
 {% block content %}
 
 <div class="page-header">
+  {% if show %}
+  <h1>Edit Show: {{ show.name }}</h1>
+  {% else %}
   <h1>Add a Show</h1>
+  {% endif %}
 </div>
 {% comment %} 
   Leaving the action empty makes the form post to the same url used to display it
