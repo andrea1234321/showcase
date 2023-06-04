@@ -1,5 +1,5 @@
 from django.shortcuts import render
-# from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView
 from .models import Show
 
 # Define the home view
@@ -14,6 +14,6 @@ def show_detail(request, show_id):
   show= Show.objects.get(id=show_id)
   return render(request, 'shows/detail.html', { 'show': show})
 
-# class ShowCreate(CreateView):
-#   model = Show
-#   fields= '__all__'
+class ShowCreate(CreateView):
+  model = Show
+  fields= '__all__'
