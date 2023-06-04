@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Show
 
 # Define the home view
@@ -21,3 +21,7 @@ class ShowCreate(CreateView):
 class ShowUpdate(UpdateView):
   model= Show
   fields= '__all__'
+
+class ShowDelete(DeleteView):
+  model= Show
+  success_url= '/shows/'

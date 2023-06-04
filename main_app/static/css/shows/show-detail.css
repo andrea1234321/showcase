@@ -20,7 +20,7 @@
   width: 98%;
 }
 
-.show-actions {
+.show-actions> a {
   margin-top: 20px;
 }
 
