@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="{% static 'css/shows/show-detail.css' %}"
+/>
+{% endblock %}
+
+{% block content %}
+
+<section class="show-container">
+  <div class="show-img">
+  </div>
+  <div class="show-details">
+    <h1>{{ show.name }}</h1>
+    <p>{{ show.genre }}</p>
+    <p>{{ show.seasons }}</p>
+    <p>{{ show.notes }}</p>
+    <p>{{ show.rating }}</p>
+  </div>
+</section>
+
+{% endblock %}

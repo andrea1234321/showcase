@@ -18,13 +18,15 @@
 <section class="card-container">
   {% for show in shows %}
     <div class="card">
-      <div class="card-content">
-        <h2 class="card-title">{{ show.name }}</h2>
-        <p>{{ show.genre }}</p>
-        <p>{{ show.seasons }}</p>
-        <p>{{ show.notes }}</p>
-        <p>{{ show.rating }}</p>
-      </div>
+      <a href="/shows/{{ show.id }}">
+        <div class="card-content">
+          <h2 class="card-title">{{ show.name }}</h2>
+          <p>{{ show.genre }}</p>
+          <p>{{ show.seasons }}</p>
+          <p>{{ show.notes }}</p>
+          <p>{{ show.rating }}</p>
+        </div>
+      </a>
     </div>
   {% endfor %}
 </section>
