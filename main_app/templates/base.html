@@ -9,28 +9,24 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quantico&family=Rubik+Glitch&display=swap" rel="stylesheet">
-  <link
-    rel="shortcut icon"
-    type="image/png"
-    href=""
-  >
+  <link 
+  id="favicon"
+  rel="icon"
+  type="image/png"
+  href="../static/images/favicon.png"
+  sizes="32x32">
   <title>Showcase</title>
   <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
   {% block head %}
   {% endblock %}
 </head>
 <body>
-  <header>
-    <div class="header-logo-container">
-      <a href="/">
-        <img 
-          src=""
-          alt="Showcase Logo"
-        >
-      </a>
-    </div>
-    <nav>
-      <ul>
+  <nav>
+    <ul>
+      <div class='logo'>
+        <li><a href="/">Showcase</a></li>
+      </div>
+      <div class='nav-links'>
         {% if user.is_authenticated %}
           <li><a href="{% url 'show-index' %}">All Shows</a></li>
           <li><a href="{% url 'show-create' %}">Add a Show</a></li>
@@ -39,9 +35,9 @@
           <li><a href="{% url 'home' %}">Login</a></li>
           <li><a href="{% url 'signup' %}">Sign Up</a></li>
         {% endif %}
-      </ul>
-    </nav>
-  </header>
+      </div>
+    </ul>
+  </nav>
   <main>
     {% block content %}
     {% endblock %}

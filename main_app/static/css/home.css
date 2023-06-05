@@ -45,21 +45,26 @@ main > section {
   height: 100%;
   text-align: center;
 }
+.login h1 {
+  font-family: 'Rubik Glitch', cursive;
+  font-size: 40px;
+  letter-spacing: 15px;
+  color: rgb(67, 60, 56);
+  display: flex;
+  justify-content: center;
+}
+
 .glitch {
-  font-size: 5rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  position: relative;
   text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
     0.025em 0.04em 0 #fffc00;
   animation: glitch 725ms infinite;
 }
 
-.glitch span {
+/* .glitch span {
   position: absolute;
   top: 0;
   left: 0;
-}
+} */
 
 .glitch span:first-child {
   animation: glitch 500ms infinite;
@@ -106,15 +111,6 @@ main > section {
   }
 }
 
-.login h1 {
-  font-family: 'Rubik Glitch', cursive;
-  font-size: 40px;
-  letter-spacing: 15px;
-  color: rgb(65, 57, 50);
-  display: flex;
-  justify-content: center;
-}
-
 .login > p {
   display: flex;
   justify-content: center;
@@ -122,7 +118,10 @@ main > section {
   font-family: 'Quantico', sans-serif;
 }
 
-
+.links{
+  display: flex;
+  flex-direction: column;
+}
 
 /* .login label {
   font-size: var(--font-reg);
