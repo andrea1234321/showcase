@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Show
+from django.contrib.auth.views import LoginView
 
 # Define the home view
-def home(request):
-  return render(request, 'base.html')
+class Home(LoginView):
+  template_name = 'home.html'
 
 def show_index(request):
   shows = Show.objects.all()
@@ -25,3 +26,6 @@ class ShowUpdate(UpdateView):
 class ShowDelete(DeleteView):
   model= Show
   success_url= '/shows/'
+
+class Home(LoginView):
+  template_name = 'home.html'
