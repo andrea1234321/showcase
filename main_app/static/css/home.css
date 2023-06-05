@@ -1,5 +1,7 @@
 main{
-  background-color: rgb(248, 236, 199);
+  background-image: url('../images/retro-background.avif');
+  background-size: cover;
+  background-position: center;
   height: 100vh;
 }
 .login-container{

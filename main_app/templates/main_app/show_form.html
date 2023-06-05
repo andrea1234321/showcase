@@ -7,14 +7,14 @@
 
 {% block content %}
 
-<div class="page-header">
-  {% if show %}
-  <h1>Edit Show: {{ show.name }}</h1>
-  {% else %}
-  <h1>Add a Show</h1>
-  {% endif %}
-</div>
 <form action="" method="post" class="form-container">
+  <div class="page-header">
+    {% if show %}
+    <h1>Edit Show: {{ show.name }}</h1>
+    {% else %}
+    <h1>Add a Show</h1>
+    {% endif %}
+  </div>
   {% csrf_token %}
   <table>
     {{ form.as_table }}
