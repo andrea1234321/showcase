@@ -1,3 +1,7 @@
+main{
+  background-color: rgb(248, 236, 199);
+  height: 100vh;
+}
 .login-container{
   background-image: url('../images/retro-tv.png');
   background-position: center;
