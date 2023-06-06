@@ -6,6 +6,11 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+# import uuid
+# import boto3
+
+# S3_BASE_URL = 'https://s3.us-east-1.amazonaws.com/'
+# BUCKET = 'andrea-showcase'
 
 # Define the home view
 class Home(LoginView):
@@ -23,14 +28,14 @@ def show_detail(request, show_id):
 
 class ShowCreate(LoginRequiredMixin, CreateView):
   model = Show
-  fields= ['name', 'genre', 'seasons', 'notes', 'rating', 'stillWatching']
+  fields= ['name', 'genre', 'seasons', 'notes', 'rating', 'stillWatching', 'photo']
   def form_valid(self, form):
     form.instance.user = self.request.user
     return super().form_valid(form)
 
 class ShowUpdate(LoginRequiredMixin, UpdateView):
   model= Show
-  fields= '__all__'
+  fields= ['name', 'genre', 'seasons', 'notes', 'rating', 'stillWatching', 'photo']
 
 class ShowDelete(LoginRequiredMixin, DeleteView):
   model= Show
@@ -52,3 +57,5 @@ def signup(request):
   form = UserCreationForm()
   context = {'form': form, 'error_message': error_message}
   return render(request, 'signup.html', context)
+
+

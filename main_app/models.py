@@ -10,8 +10,11 @@ class Show(models.Model):
   seasons= models.IntegerField()
   notes= models.TextField()
   rating= models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
-  stillWatching= models.BooleanField()
+  stillWatching= models.BooleanField('Still watching?')
+  photo= models.URLField()
+  # url = models.CharField(max_length=250)
   user = models.ForeignKey(User, on_delete=models.CASCADE)
+
 
   def __str__(self):
     return self.name
