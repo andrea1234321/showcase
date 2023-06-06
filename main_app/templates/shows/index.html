@@ -14,17 +14,27 @@
 <section class="page-header">
   <h1>Show List</h1>
 </section>
-
 <section class="card-container">
   {% for show in shows %}
-  <div class="card" style="background-image: url('{{ show.url }}')">
-      <a href="/shows/{{ show.id }}">
-        <div class="card-content">
+  {% if show.url %}
+    <a href="/shows/{{ show.id }}">
+      <div class="card" style="background-image: url('{{ show.url }}')">
+        {% comment %} <div class="card-content">
           <h2 class="card-title">{{ show.name }}</h2>
           <p>{{ show.genre }}</p>
-        </div>
-      </a>
-    </div>
+        </div> {% endcomment %}
+      </div>
+    </a>
+  {% else %}
+  <div class="card">
+    <a href="/shows/{{ show.id }}">
+      <div class="card-content">
+        <h2 class="card-title">{{ show.name }}</h2>
+        <p>{{ show.genre }}</p>
+      </div>
+    </a>
+  </div>
+  {% endif %}
   {% endfor %}
 </section>
 

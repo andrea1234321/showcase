@@ -20,6 +20,8 @@
 - HTML
 - CSS
 - Git
+- Dockerfile
 - Fly.io
+- Bit.io
 
 # IceBox 🧊

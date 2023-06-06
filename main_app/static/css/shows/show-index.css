@@ -23,8 +23,8 @@ main{
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 7px;
 }
-
 .card-content {
   display: flex;
   flex-direction: column;
@@ -33,6 +33,7 @@ main{
   width: 100%;
   color: rgb(90,61,43);
 }
+
 .card-title{
   font-size: 30px !important;
 }
