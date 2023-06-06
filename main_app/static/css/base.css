@@ -20,7 +20,7 @@ body {
   min-height: 100vh;
   --nav-bg: rgb(90,61,43);
   --nav-bg-ff: rgb(255,236,180);
-  --borders: rgb(244,161,39) solid 2px;
+  --borders: rgb(244,161,39) solid 1px;
   --text-color: rgb(255,236,180);
   --link-hover-color: rgb(244,161,39);
   --button-bg: rgb(255, 255, 255);
@@ -98,23 +98,23 @@ button{
 }
 
 .submit {
+  border: 1px solid var(--submit);
   color: var(--submit);
-  border-color: var(--submit);
 }
 
 .secondary {
   color: var(--secondary);
-  border-color: var(--secondary);
+  border: 1px solid var(--secondary);
 }
 
 .warn {
   color: var(--warn);
-  border-color: var(--warn);
+  border: 1px solid var(--ward);
 }
 
 .danger {
   color: var(--danger);
-  border-color: var(--danger);
+  border: 1px solid var(--danger);
 }
 
 a, a:visited{

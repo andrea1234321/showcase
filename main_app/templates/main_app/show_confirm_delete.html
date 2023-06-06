@@ -1,22 +1,27 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}"/>
+{% endblock %}
+
 {% block content %}
 
-<div class="page-header">
-  <h1>Delete Show?</h1>
+<div class='form-container'>
+  <div class="page-header">
+    <h1>Delete Show?</h1>
+  </div>
+  <h2>Are you sure you want to delete {{ show.name }}?</h2>
+  <form action="" method="post" class="form">
+    {% csrf_token %}
+    <a 
+      href="{% url 'show-detail' show.id %}" 
+      class="btn secondary"
+    >
+      Cancel
+    </a>
+    <button type="submit" class="btn danger">Yes - Delete!</button>
+  </form>
 </div>
-<h2>Are you sure you want to delete {{ show.name }}?</h2>
-
-<form action="" method="post" class="form">
-  {% csrf_token %}
-  <a 
-    href="{% url 'show-detail' show.id %}" 
-    class="btn secondary"
-  >
-    Cancel
-  </a>
-  <button type="submit" class="btn danger">Yes - Delete!</button>
-</form>
 
 {% endblock %}

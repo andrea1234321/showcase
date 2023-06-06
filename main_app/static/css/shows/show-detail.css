@@ -12,6 +12,7 @@ body{
 }
 .show-img-container img{
   width: 300px;
+  border-radius: 7px;
 }
 
 .show-details {

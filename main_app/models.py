@@ -8,7 +8,7 @@ class Show(models.Model):
   name= models.CharField(max_length=100)
   genre= models.CharField(max_length=100)
   seasons= models.IntegerField()
-  notes= models.TextField()
+  notes= models.TextField(blank=True)
   rating= models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
   stillWatching= models.BooleanField('Still watching?')
   url= models.URLField('URL link:', blank=True)
