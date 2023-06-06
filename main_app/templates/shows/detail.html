@@ -12,18 +12,19 @@
 {% block content %}
 
 <section class="show-container">
-  <div class="show-img">
+  <div class="show-img-container">
+    <img src="{{ show.url }}" alt="{{show.name}} photo">
   </div>
   <div class="show-details">
-    <h1>{{ show.name }}</h1>
-    <p>{{ show.genre }}</p>
-    <p>{{ show.seasons }}</p>
+    <h1>{{ show.name }} <i class='genre'>- {{ show.genre }}</i> </h1>
+    <p>{{ show.seasons }} Seasons</p>
+    <p>{{ show.rating }} Stars</p> 
     <p>{{ show.notes }}</p>
-    <p>{{ show.rating }}</p>
+    <div class="show-actions">
+      <a href="{% url 'show-update' show.id %}" class="btn warn">Edit</a>
+      <a href="{% url 'show-delete' show.id %}" class="btn danger">Delete</a>
+    </div>
   </div>
-  <div class="show-actions">
-    <a href="{% url 'show-update' show.id %}" class="btn warn">Edit</a>
-    <a href="{% url 'show-delete' show.id %}" class="btn danger">Delete</a>
 </section>
 
 {% endblock %}

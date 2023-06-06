@@ -11,7 +11,7 @@ class Show(models.Model):
   notes= models.TextField()
   rating= models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
   stillWatching= models.BooleanField('Still watching?')
-  photo= models.URLField()
+  url= models.URLField('URL link:')
   # url = models.CharField(max_length=250)
   user = models.ForeignKey(User, on_delete=models.CASCADE)
 

@@ -28,14 +28,14 @@ def show_detail(request, show_id):
 
 class ShowCreate(LoginRequiredMixin, CreateView):
   model = Show
-  fields= ['name', 'genre', 'seasons', 'notes', 'rating', 'stillWatching', 'photo']
+  fields= ['name', 'genre', 'seasons', 'notes', 'rating', 'stillWatching', 'url']
   def form_valid(self, form):
     form.instance.user = self.request.user
     return super().form_valid(form)
 
 class ShowUpdate(LoginRequiredMixin, UpdateView):
   model= Show
-  fields= ['name', 'genre', 'seasons', 'notes', 'rating', 'stillWatching', 'photo']
+  fields= ['name', 'genre', 'seasons', 'notes', 'rating', 'stillWatching', 'url']
 
 class ShowDelete(LoginRequiredMixin, DeleteView):
   model= Show

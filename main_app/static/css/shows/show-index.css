@@ -14,7 +14,7 @@ main{
 .card {
   width: 275px;
   margin: 30px;
-  height: 300px;
+  height: 400px;
   border: 1px solid  rgb(90,61,43);
   background-color: rgba(248, 236, 199, 0.9);
   background-position: center;
