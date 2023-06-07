@@ -1,26 +1,40 @@
 body{
-  background-color: rgb(248, 236, 199);
+  background-image: url('../../images/retro-lines-background.jpeg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
 }
 .show-container {
   margin: 100px auto;
   display: flex;
-  width: 80%;
+  width: 90%;
+  justify-content: space-evenly;
+  text-align: center;
 }
 .show-img-container{
   display: flex;
   justify-content: center;
+  width: 50%;
 }
 .show-img-container img{
   width: 300px;
   border-radius: 7px;
 }
-
+.show-details-container{
+  width: 50%;
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+}
 .show-details {
+  background-color: rgba(248, 236, 199, 0.95);
+  border: 1px solid rgb(90,61,43);
+  border-radius: 7px;
   color: rgb(90,61,43);
-  width: 80%;
+  width: 400px;
+  height: 350px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
@@ -33,9 +47,21 @@ body{
 }
 .show-details p {
   font-size: var(--font-m);
-  margin: 5px 0;
+  margin: 5px 10px;
 }
 
 .show-actions{
   margin-top: 50px;
+}
+.show-details-nourl{
+  background-color: rgba(248, 236, 199, 0.95);
+  border: 1px solid rgb(90,61,43);
+  border-radius: 7px;
+  color: rgb(90,61,43);
+  width: 100%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

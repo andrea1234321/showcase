@@ -12,10 +12,24 @@
 {% block content %}
 
 <section class="show-container">
+  {% if show.url %}
   <div class="show-img-container">
     <img src="{{ show.url }}" alt="{{show.name}} photo">
   </div>
-  <div class="show-details">
+  <div class='show-details-container'>
+    <div class="show-details">
+      <h1>{{ show.name }} <i class='genre'>- {{ show.genre }}</i> </h1>
+      <p>{{ show.seasons }} Seasons</p>
+      <p>{{ show.rating }}/5</p>
+      <p>{{ show.notes }}</p>
+      <div class="show-actions">
+        <a href="{% url 'show-update' show.id %}" class="btn warn">Edit</a>
+        <a href="{% url 'show-delete' show.id %}" class="btn danger">Delete</a>
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <div class="show-details-nourl">
     <h1>{{ show.name }} <i class='genre'>- {{ show.genre }}</i> </h1>
     <p>{{ show.seasons }} Seasons</p>
     <p>{{ show.rating }}/5</p>
@@ -25,6 +39,7 @@
       <a href="{% url 'show-delete' show.id %}" class="btn danger">Delete</a>
     </div>
   </div>
+  {% endif %}
 </section>
 
 {% endblock %}
