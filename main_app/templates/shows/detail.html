@@ -18,7 +18,7 @@
   <div class="show-details">
     <h1>{{ show.name }} <i class='genre'>- {{ show.genre }}</i> </h1>
     <p>{{ show.seasons }} Seasons</p>
-    <p>{{ show.rating }} Stars</p> 
+    <p>{{ show.rating }}/5</p>
     <p>{{ show.notes }}</p>
     <div class="show-actions">
       <a href="{% url 'show-update' show.id %}" class="btn warn">Edit</a>
