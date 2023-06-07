@@ -6,13 +6,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-# import uuid
-# import boto3
 
-# S3_BASE_URL = 'https://s3.us-east-1.amazonaws.com/'
-# BUCKET = 'andrea-showcase'
-
-# Define the home view
 class Home(LoginView):
   template_name = 'home.html'
 
