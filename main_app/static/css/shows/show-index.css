@@ -4,6 +4,9 @@ main{
   background-position: center;
   height: 100vh;
 }
+.page-header{
+  margin-top: 70px;
+}
 .card-container {
   padding: 0 30px;
   display: flex;

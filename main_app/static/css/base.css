@@ -42,6 +42,11 @@ nav {
   background: var(--nav-bg); 
   border-bottom: var(--borders);
   padding: 10px 0;
+  overflow: hidden;
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
 }
 
 ul {

@@ -18,12 +18,7 @@
   {% for show in shows %}
   {% if show.url %}
     <a href="/shows/{{ show.id }}">
-      <div class="card" style="background-image: url('{{ show.url }}')">
-        {% comment %} <div class="card-content">
-          <h2 class="card-title">{{ show.name }}</h2>
-          <p>{{ show.genre }}</p>
-        </div> {% endcomment %}
-      </div>
+      <div class="card" style="background-image: url('{{ show.url }}')"></div>
     </a>
   {% else %}
   <div class="card">
