@@ -109,7 +109,7 @@ button{
 
 .warn {
   color: var(--warn);
-  border: 1px solid var(--ward);
+  border: 1px solid var(--warn);
 }
 
 .danger {
