@@ -19,7 +19,9 @@
   <table>
     {{ form.as_table }}
   </table>
-  <button type="submit" class="btn submit">Submit!</button>
+  {% if user == show.user %}
+    <button type="submit" class="btn submit">Submit!</button>
+  {% endif %}
 </form>
 
 {% endblock %}

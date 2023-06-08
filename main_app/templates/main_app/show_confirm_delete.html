@@ -14,13 +14,15 @@
   <h2>Are you sure you want to delete {{ show.name }}?</h2>
   <form action="" method="post" class="form">
     {% csrf_token %}
-    <a 
-      href="{% url 'show-detail' show.id %}" 
-      class="btn secondary"
-    >
-      Cancel
-    </a>
-    <button type="submit" class="btn danger">Yes - Delete!</button>
+    {% if user == show.user %}
+      <a 
+        href="{% url 'show-detail' show.id %}" 
+        class="btn secondary"
+      >
+        Cancel
+      </a>
+      <button type="submit" class="btn danger">Yes - Delete!</button>
+    {% endif %}
   </form>
 </div>
 
