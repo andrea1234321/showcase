@@ -22,12 +22,10 @@
       <p>{{ show.seasons }} Seasons</p>
       <p>{{ show.rating }}/5</p>
       <p>{{ show.notes }}</p>
-      {% if user == show.user %}
-        <div class="show-actions">
-          <a href="{% url 'show-update' show.id %}" class="btn warn">Edit</a>
-          <a href="{% url 'show-delete' show.id %}" class="btn danger">Delete</a>
-        </div>
-      {% endif %}
+      <div class="show-actions">
+        <a href="{% url 'show-update' show.id %}" class="btn warn">Edit</a>
+        <a href="{% url 'show-delete' show.id %}" class="btn danger">Delete</a>
+      </div>
     </div>
   </div>
   {% else %}
@@ -36,12 +34,10 @@
     <p>{{ show.seasons }} Seasons</p>
     <p>{{ show.rating }}/5</p>
     <p>{{ show.notes }}</p>
-    {% if user == show.user %}
-      <div class="show-actions">
-        <a href="{% url 'show-update' show.id %}" class="btn warn">Edit</a>
-        <a href="{% url 'show-delete' show.id %}" class="btn danger">Delete</a>
-      </div>
-    {% endif %}
+    <div class="show-actions">
+      <a href="{% url 'show-update' show.id %}" class="btn warn">Edit</a>
+      <a href="{% url 'show-delete' show.id %}" class="btn danger">Delete</a>
+    </div>
   </div>
   {% endif %}
 </section>
