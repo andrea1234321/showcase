@@ -5,8 +5,8 @@ from django.contrib.auth.views import LoginView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin
-
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.http import HttpResponseForbidden
 class Home(LoginView):
   template_name = 'home.html'
 
@@ -18,6 +18,8 @@ def show_index(request):
 @login_required
 def show_detail(request, show_id):
   show= Show.objects.get(id=show_id)
+  if not show.user == request.user:
+    return HttpResponseForbidden('Forbidden!')
   return render(request, 'shows/detail.html', { 'show': show})
 
 class ShowCreate(LoginRequiredMixin, CreateView):
@@ -27,13 +29,19 @@ class ShowCreate(LoginRequiredMixin, CreateView):
     form.instance.user = self.request.user
     return super().form_valid(form)
 
-class ShowUpdate(LoginRequiredMixin, UpdateView):
+class ShowUpdate(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
   model= Show
   fields= ['name', 'genre', 'seasons', 'notes', 'rating', 'stillWatching', 'url']
+  def test_func(self):
+    show = self.get_object()
+    return self.request.user == show.user
 
-class ShowDelete(LoginRequiredMixin, DeleteView):
+class ShowDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
   model= Show
   success_url= '/shows/'
+  def test_func(self):
+    show = self.get_object()
+    return self.request.user == show.user
 
 class Home(LoginView):
   template_name = 'home.html'
