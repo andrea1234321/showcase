@@ -15,6 +15,7 @@ import environ
 import os
 env = environ.Env()
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
@@ -88,11 +89,11 @@ WSGI_APPLICATION = 'showcase.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('BIT_IO_DATABASE_NAME'),
-        'USER': env('BIT_IO_USER'),
-        'PASSWORD': env('BIT_IO_PASSWORD'),
-        'HOST': 'db.bit.io',
-        'PORT': '5432',
+        'NAME': env('DATABASE'),
+        'USER': env('SUPABASE_USER'),
+        'PASSWORD': env('PASSWORD'),
+        'HOST': env('HOST'),
+        'PORT': env('PORT'),
     }
 }
 
@@ -140,3 +141,4 @@ LOGOUT_REDIRECT_URL = 'home'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+

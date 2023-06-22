@@ -23,7 +23,8 @@ Need a place to showcase your favorite shows, well this is the app for you. Show
 - Git
 - Dockerfile
 - Fly.io
-- Bit.io
+- Supabase
+- ~~Bit.io~~
 
 # IceBox 🧊
 
